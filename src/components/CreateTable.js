@@ -1,7 +1,10 @@
 import React from 'react'
 import NewRow from './NewRow'
 
-const CreateTable = () => {
+const CreateTable = ({ data, setData }) => {
+
+    const [rows, addRows] = React.useState([0]);
+
     return (
         <div>
             <table className="table-fixed w-full border-2 border-gray-200 rounded-2xl">
@@ -13,7 +16,17 @@ const CreateTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <NewRow />
+                    {
+                        rows.map((row, index) => {
+                            return <NewRow
+                                addRows={addRows}
+                                rowId={index}
+                                key={index}
+                                setData={setData}
+                                data={data}
+                            />
+                        })
+                    }
                 </tbody>
             </table>
         </div>

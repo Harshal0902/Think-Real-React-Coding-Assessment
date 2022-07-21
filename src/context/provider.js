@@ -5,7 +5,7 @@ export const DataContext = createContext(null);
 
 const Provider = ({ children }) => {
     
-    const [formData, setFormData] = useState({ url: '', type: 'POST' })
+    const [formData, setFormData] = useState({ url: '', type: 'post' })
     const [jsonText, setJsonText] = useState('');
     const [paramData, setParamData] = useState([]);
     const [headerData, setHeaderData] = useState([]);
